@@ -27,6 +27,28 @@ header {
     font-weight: 700;
 }
 
+.wrapper {
+    width: 100%;
+    max-width: 920px;
+    margin: 10px auto;
+    color: var(--text-color);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wrapper label {
+    display: block;
+    font-size: 1.25em;
+}
+
+.wrapper input {
+    width: 90%;
+    font-size: 1.25em;
+    padding: 5px 10px;
+}
+
 .container {
     width: 100%;
     max-width: 920px;

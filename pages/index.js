@@ -1,8 +1,16 @@
 import Card from "../components/Card";
+import Input from "../components/Input";
 import Layout from "../components/Layout";
 
 export default function Home({ data }) {
+    const [ amount, setAmount ] = React.useState(1)
     //console.log(data);
+
+    const formatNumber = (number) => {
+        let fixed = Math.round((number * amount)*100)/100;
+        fixed = fixed.toLocaleString();
+        return fixed;
+    }
 
     return (
         <Layout>
@@ -10,13 +18,15 @@ export default function Home({ data }) {
                 <header>
                     <h1>DolarPY</h1>
                 </header>
+                <Input amount={amount} setAmount={setAmount} />
                 <div className="container">
-                    {data.map((item) => {
+                    {data.map((item, index) => {
                         return (
                             <Card
+                                key={index}
                                 banco={item.banco}
-                                compra={item.compra}
-                                venta={item.venta}
+                                compra={formatNumber(item.compra)}
+                                venta={formatNumber(item.venta)}
                                 refD={item?.referencial_diario}
                             />
                         );
@@ -36,13 +46,13 @@ export async function getServerSideProps() {
     const banks = await Object.keys(json.dolarpy);
     const data = await Object.values(json.dolarpy);
 
-    //we are going to add the property of the bank name to the 
-    //data array to be able to use it in the card titles
+    //we are going to merge the property of the bank name to the 
+    //data array to be able to use it in the card titles 
     for (let key = 0; key < banks.length; key++) {
         data[key].banco = banks[key];
     }
 
-    //now we have all the data in one array ready for map()
+    //now we have all the data in one aingle array ready for map()
     return {
         props: {
             data,
