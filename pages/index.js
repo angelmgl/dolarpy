@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import Layout from "../components/Layout";
 import Card from "../components/Card";
 import Input from "../components/Input";
 
 export default function Home({ data }) {
-    const [ amount, setAmount ] = React.useState(1)
+    const [ amount, setAmount ] = useState(1)
     //console.log(data);
 
     const formatNumber = (number) => {
