@@ -1,6 +1,6 @@
+import Layout from "../components/Layout";
 import Card from "../components/Card";
 import Input from "../components/Input";
-import Layout from "../components/Layout";
 
 export default function Home({ data }) {
     const [ amount, setAmount ] = React.useState(1)
