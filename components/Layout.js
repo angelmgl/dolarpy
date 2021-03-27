@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
     return (
@@ -10,8 +11,8 @@ export default function Layout({ children }) {
                     content="initial-scale=1.0, width=device-width"
                 />
             </Head>
-            {children}
-            <footer>Footer</footer>
+            <main>{children}</main>
+            <Footer />
         </div>
     );
 }
