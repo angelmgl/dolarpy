@@ -1,0 +1,21 @@
+{
+  "name": "dolarpy",
+  "version": "1.0.0",
+  "description": "UI for dolarpy API made in Next JS",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelmgl/dolarpy.git"
+  },
+  "author": "Angel Mgl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelmgl/dolarpy/issues"
+  },
+  "homepage": "https://github.com/angelmgl/dolarpy#readme"
+}
