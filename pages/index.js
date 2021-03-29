@@ -5,7 +5,6 @@ import Input from "../components/Input";
 
 export default function Home({ data }) {
     const [ amount, setAmount ] = useState(1)
-    //console.log(data);
 
     const formatNumber = (number) => {
         let fixed = Math.round((number * amount)*100)/100;
